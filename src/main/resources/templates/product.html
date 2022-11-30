@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>TITLE</th>
+    <th>COST</th>
+    <th>DESCRIPTION</th>
+  </tr>
+  <tr th:object="${product}">
+    <td th:text="${product.getTitle()}">product</td>
+    <td th:text="${product.getCost()}"></td>
+    <td>Text</td>
+  </tr>
+</table>
+<a th:href="@{/app/products/delete/{id}(id=${product.getId()})}">Удалить продукт</a>
+</body>
+</html>

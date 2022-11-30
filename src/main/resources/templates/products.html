@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>TITLE</th>
+    <th>COST</th>
+  </tr>
+  <tr th:each="product:${products}">
+    <td th:text="${product.getId()}"></td>
+    <td><a th:href="@{/app/products/{id}(id=${product.getId()})}" th:text="${product.getTitle()}">product</a></td>
+    <td th:text="${product.getCost()}"></td>
+  </tr>
+</table>
+
+<a href="/app/products/add_product_to_repo">Добавить новый продукт</a>
+</body>
+</html>
